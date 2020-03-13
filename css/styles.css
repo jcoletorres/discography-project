@@ -1,0 +1,423 @@
+/*
+Developer: Jared Torres
+Table of Contents
+HEADER: Title - The Unofficial Fansite of Ghost, Band Logo
+NAV: Navigation Bar
+ARTICLE: Band Photo, About
+SECTION: Releases (with album covers), Subscribe
+FOOTER: Created by
+Color Palette
+  #000    - Background Color
+  rgba(55, 55, 55, .65) - Dark Grey Background for Grid
+  #CBC6A9 - Header, About, Navigation Bar
+  #ED0000 - Link Hover
+  #BB9884 - Text for Releases
+  #DBB255 - Text for Subscribe, Footer Link
+Font: Crimson Text
+*/
+html {
+  background: #000 url(../images/background/background.jpg) no-repeat center fixed;
+}
+body{
+  display: grid;
+  font-family: 'Crimson Text', sans-serif;
+  grid-template-areas: ". nav ."
+                       ". header ."
+                       ". article ."
+                       ". list ."
+                       ". form ."
+                       ". footer .";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, auto);
+}
+header, nav, article, .list, .form, footer {
+  background-color: rgba(55, 55, 55, .65);
+}
+header {
+  display: flex;
+  flex-direction: column;
+  grid-area: header;
+}
+nav {
+  grid-area: nav;
+}
+article {
+  color: #CBC6A9;
+  display: flex;
+  flex-direction: column;
+  grid-area: article;
+}
+.list {
+  color: #BB9884;
+  grid-area: list;
+}
+.form {
+  color: #DBB255;
+  grid-area: form;
+}
+footer {
+  grid-area: footer;
+}
+h2 {
+  font-size: 60px;
+  text-align: center;
+}
+/*-------------------------------------------------*/
+/*---------------------HEADER----------------------*/
+/*-------------------------------------------------*/
+h1 {
+  color: #CBC6A9;
+  font-size: 70px;
+  text-align: center;
+}
+.bandlogo {
+  object-fit: none;
+}
+/*-------------------------------------------------*/
+/*-----------------------NAV-----------------------*/
+/*-------------------------------------------------*/
+.navigationbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+ul > li {
+  font-size: 45px;
+  padding: 0 50px;
+  list-style: none;
+}
+nav h2 {
+  display: none;
+}
+li a:link {
+  color: #CBC6A9;
+}
+li a:visited {
+  color: #CBC6A9;
+}
+li a:hover {
+  color: #ED0000;
+}
+/*-------------------------------------------------*/
+/*----------------------ABOUT----------------------*/
+/*-------------------------------------------------*/
+article > img {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+article p {
+  display: flex;
+  font-size: 25px;
+  justify-content: center;
+  text-align: left;
+}
+/*-------------------------------------------------*/
+/*---------------------RELEASES--------------------*/
+/*-------------------------------------------------*/
+h3 {
+  font-size: 40px;
+  text-align: center;
+}
+.list > p {
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 1em;
+}
+.list > div {
+  list-style: inside;
+  display: inline-flex;
+  flex-direction: row;
+}
+div > img{
+  width: 500px;
+  height: 500px;
+}
+div ol {
+  font-size: 25px;
+}
+ol > li a:link, ol > li a:visited {
+  color: #BB9884;
+}
+ol > li a:hover {
+  color: #ED0000;
+}
+/*-------------------------------------------------*/
+/*---------------------SUBSCRIBE-------------------*/
+/*-------------------------------------------------*/
+.formlist {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(18, auto);
+  justify-content: center;
+  font-size: 25px;
+  padding-bottom: 1em;
+}
+label{
+  text-align: center;
+}
+.formlist div{
+  text-align: center;
+}
+input[type="submit"] {
+  background-color: #DBB255;
+  border: none;
+  color: rgba(55, 55, 55, 1);
+  cursor: pointer;
+  font-family: 'Crimson Text', sans-serif;
+  font-size: 20px;
+  margin: 10px 18em;
+  padding: 16px 32px;
+  text-decoration: underline;
+}
+input[type="text"], input[type="email"] {
+  margin: 0 auto;
+  padding: 6px 35px 6px 0px;
+  width: 200px;
+}
+.placeholder {
+  text-align: left;
+}
+/*-------------------------------------------------*/
+/*----------------------FOOTER---------------------*/
+/*-------------------------------------------------*/
+footer {
+  color: #CBC6A9;
+  text-align: center;
+}
+footer a {
+  color: #DBB255;
+}
+.form > p {
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 1em;
+}
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
+/*-----------------Query-896px---------------------*/
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
+@media only screen and (max-width: 896px) {
+  html {
+    background: #000 url(../images/background/backgroundmobile.jpg) center top scroll;
+  }
+  h2 {
+    font-size: 45px;
+    text-align: center;
+  }
+/*-------------------------------------------------*/
+/*---------------------HEADER----------------------*/
+/*-------------------------------------------------*/
+  h1 {
+    color: #CBC6A9;
+    font-size: 60px;
+    text-align: center;
+  }
+  .bandlogo {
+    object-fit: cover;
+    width: 100%;
+  }
+/*-------------------------------------------------*/
+/*-----------------------NAV-----------------------*/
+/*-------------------------------------------------*/
+  ul {
+    margin-right: 30px;
+  }
+  ul > li {
+    font-size: 35px;
+    padding: 0 15px;
+    list-style: none;
+  }
+/*-------------------------------------------------*/
+/*-----------------------ABOUT---------------------*/
+/*-------------------------------------------------*/
+  article p {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+  }
+  .bandpicture {
+    width: 100%;
+  }
+/*-------------------------------------------------*/
+/*---------------------RELEASES--------------------*/
+/*-------------------------------------------------*/
+  h3 {
+    font-size: 40px;
+    text-align: center;
+  }
+  .list > div {
+    flex-direction: column;
+    justify-content: center;
+  }
+  div ol {
+    font-size: 20px;
+    padding: 0;
+    text-align: center;
+  }
+
+/*-------------------------------------------------*/
+/*---------------------SUBSCRIBE-------------------*/
+/*-------------------------------------------------*/
+  .formlist {
+    font-size: 20px;
+    margin: inherit;
+    padding-bottom: 1em;
+    text-align: center;
+  }
+  input[type="submit"] {
+    font-size: 20px;
+    margin: auto;
+    text-decoration: underline;
+  }
+  input[type="text"], input[type="email"] {
+    padding: 3px 20px 3px 0px;
+  }
+/*-------------------------------------------------*/
+/*----------------------FOOTER---------------------*/
+/*-------------------------------------------------*/
+  footer {
+    color: #CBC6A9;
+    text-align: center;
+  }
+  footer a {
+    color: #DBB255;
+  }
+  input[type="text"] {
+    margin: 0 auto;
+    width: 150px;
+  }
+  input[type="email"] {
+    margin: 0 auto;
+    width: 150px;
+  }
+}
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
+/*-----------------Query-414px---------------------*/
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
+@media only screen and (max-width: 414px) {
+  h2 {
+    font-size: 40px;
+    text-align: center;
+  }
+/*-------------------------------------------------*/
+/*---------------------HEADER----------------------*/
+/*-------------------------------------------------*/
+  h1 {
+    color: #CBC6A9;
+    font-size: 50px;
+    text-align: center;
+  }
+  .bandlogo {
+    object-fit: cover;
+    width: 100%;
+  }
+/*-------------------------------------------------*/
+/*-----------------------NAV-----------------------*/
+/*-------------------------------------------------*/
+  .navigationbar {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  ul {
+    margin-right: 30px;
+  }
+  ul > li {
+    font-size: 40px;
+    padding: 20px 15px;
+  }
+/*-------------------------------------------------*/
+/*-----------------------ABOUT---------------------*/
+/*-------------------------------------------------*/
+  article p {
+    display: flex;
+    font-size: 20px;
+  }
+/*-------------------------------------------------*/
+/*---------------------RELEASES--------------------*/
+/*-------------------------------------------------*/
+  h3 {
+    font-size: 30px;
+  }
+  .list > p {
+    font-size: 18px;
+  }
+  div img {
+    width: 350px;
+    height: 350px;
+  }
+  div ol{
+    text-align: center;
+  }
+/*-------------------------------------------------*/
+/*---------------------SUBSCRIBE-------------------*/
+/*-------------------------------------------------*/
+  .form > p {
+    font-size: 18px;
+  }
+  .formlist {
+    font-size: 20px;
+  }
+  input[type="text"], input[type="email"] {
+    width: 150px;
+  }
+
+}
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
+/*-----------------Query-320px---------------------*/
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
+@media only screen and (max-width: 320px) {
+  h2 {
+    font-size: 35px;
+    text-align: center;
+  }
+/*-------------------------------------------------*/
+/*---------------------HEADER----------------------*/
+/*-------------------------------------------------*/
+  h1 {
+    color: #CBC6A9;
+    font-size: 45px;
+    text-align: center;
+  }
+
+/*-------------------------------------------------*/
+/*-----------------------NAV-----------------------*/
+/*-------------------------------------------------*/
+  ul > li {
+    font-size: 35px;
+  }
+  ul {
+    margin-right: 30px;
+  }
+/*-------------------------------------------------*/
+/*-----------------------ABOUT---------------------*/
+/*-------------------------------------------------*/
+  article p {
+    display: flex;
+    font-size: 18px;
+  }
+/*-------------------------------------------------*/
+/*---------------------RELEASES--------------------*/
+/*-------------------------------------------------*/
+  h3 {
+    font-size: 25px;
+  }
+  div img {
+    width: 300px;
+    height: 300px;
+    margin: inherit;
+    padding-left: 3px;
+  }
+  div ol {
+    padding:inherit;
+    font-size: 18px;
+  }
+}
